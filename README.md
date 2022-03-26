@@ -1,8 +1,7 @@
-# FINAL-PROJECT-GROUP4
 
-PREDICTIVE MODELING FOR CHANCE OF ADMISSION
+# PREDICTIVE MODELING FOR CHANCE OF ADMISSION
 
-The Code PYQT5.py shows graphics for an EDA Analysis, as well as the results of three machine learning algorithms based on the chance of admission data set. The research's aim is to build a regression model that best predicts the chance of admission for graduate students and obtain feature importance.
+The Code main.py shows the EDA Analysis, as well as the results of two machine learning algorithms based on the chance of admission data set. The research's aim is to build a regression model that best predicts the chance of admission for graduate students and obtain feature importance.
 
 Code Order: The code is being executed from top to bottom 
 
@@ -27,18 +26,16 @@ Random Forest Regression
 Linear Regression
 
 Requirements:
-Before running this Main pyqt5.py file, you need the following installed on your python environment:
+Before running this  main.py file, you need the following installed on your python environment:
 Pip install numpy
 Pip install pandas
 Pip install matplotlib
 Pip install seaborn
 Pip install scikit-learn
-Pip install pydotplus*
 
-https://graphviz.org/download/
 
-Note: Using Anaconda environment saves the stress of the above apart from those in asterisk and the link. 
-The link above is an application which works with pydotplus to plot decision trees.
+Note: Using Anaconda environment saves the stress of the above apart from those in asterisk and the link.
+
 
 
 Description of files:
@@ -80,5 +77,5 @@ ML MODELS
 Cross Validation:
 The section for cross validation displays first hand test scores on the data set with several regression models. This gives us a view on what model works best for our data set.
 
-Decision Tree Regression, Random Forest Regression, Linear Regression
+Random Forest Regression, Linear Regression
 
