@@ -315,7 +315,17 @@ model.predict(X_test)
 
 # Testing model with High/Medium/Low inputs
 check= pd.DataFrame([], columns=df_test.drop(columns=['Chance of Admit']).columns)
-check.loc['Student1']= [340,120,5.0,5.0,5.0,10.0,1]
-check.loc['Student2']= [170,60,2.5,2.5,2.5,5.0,1]
-check.loc['Student3']= [20,30,1.5,1.5,1.5,2.5,0]
+check.loc['Student1']= [340,120,5,5.0,5.0,10.0,1]
+check.loc['Student2']= [170,60,2,2.5,2.5,5.0,1]
+check.loc['Student3']= [20,30,1,1.5,1.5,2.5,0]
+check.loc['Dummy']= [1,1,1,1.0,1.0,1.0,0]
+check.iloc[:,2]=check.iloc[:,2].astype('category')
+check.iloc[:,6]=check.iloc[:,6].astype('category')
+check.iloc[:,0]=check.iloc[:,0].astype('int')
+check.iloc[:,1]=check.iloc[:,1].astype('int')
+
+sc_n= StandardScaler()
+scaled= sc_n.fit_transform(check.values)
+predicted= model.predict(scaled)
+check['Chance of Admission']= sc.inverse_transform(predicted)
 
