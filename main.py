@@ -274,7 +274,7 @@ best_score_rs, best_params_rs, best_estimator_rs = best_score_params_estimator_r
 
 # Get the prediction on the testing data using best_model
 y_test_pred = best_estimator_rs.predict(X_test)
-y_test_pred= pd.DataFrame(sc.inverse_transform(y_test_pred),columns=[target])
+y_test_pred= pd.DataFrame(sc.inverse_transform(y_test_pred.reshape(-1,1)),columns=[target])
 test_score= mean_squared_error(df_test[target],y_test_pred[target])
 print(f'Test MSE: {test_score}')
 from sklearn.metrics import r2_score
