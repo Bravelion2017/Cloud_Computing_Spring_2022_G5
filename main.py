@@ -301,3 +301,21 @@ plt.xticks(rotation=45)
 plt.title('Feature Importance for Admission in UCLA')
 plt.show()
 #==============
+
+# Saving Model
+import pickle
+with open('best_estimator_rs.pickle','wb') as f:
+    pickle.dump(best_estimator_rs, f)
+
+# Loading saved model
+with open('C://Users//oseme//PycharmProjects//pythonProject3//best_estimator_rs.pickle', 'rb') as f:
+    model= pickle.load(f)
+
+model.predict(X_test)
+
+# Testing model with High/Medium/Low inputs
+check= pd.DataFrame([], columns=df_test.drop(columns=['Chance of Admit']).columns)
+check.loc['Student1']= [340,120,5.0,5.0,5.0,10.0,1]
+check.loc['Student2']= [170,60,2.5,2.5,2.5,5.0,1]
+check.loc['Student3']= [20,30,1.5,1.5,1.5,2.5,0]
+
